@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Liste des remerciements : </h1>
+
+{% for liste in remerciements %}
+{% set i = loop.index %}
+
+<div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
+  <div class="card-header">Remerciement {{i}} : </div>
+  <div class="card-body">
+
+    <p class="card-text">{{liste.membre}} <img src="/images/avatar_{{liste.membre}}.PNG" alt="{{liste.membre}}" width="60px"> remercie {{liste.membre_remercie}} <img src="/images/avatar_{{liste.membre_remercie}}.PNG" alt="{{liste.membre}}" width="60px"> pour  
+{{liste.raison_remerciement}} le {{liste.date|date("m/d/Y")}} <br></p>
+  </div>
+</div>
+
+	{% endfor %}
+
+
+
+{% endblock %}

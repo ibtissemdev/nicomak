@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Formulaire</h1>
+
+{{form_start(formulaire)}}
+
+<div class="form-group">
+{{ form_row(formulaire.membre)}}
+</div>
+<div class="form-group">
+{{ form_row(formulaire.raison_remerciement)}}
+</div>
+<div class="form-group">
+{{ form_row(formulaire.membre_remercie)}}
+</div>
+<div class="form-group">
+{{ form_row(formulaire.date_remerciement)}}
+</div>
+
+<button class="btn btn-primary">Remercier</button>
+
+{{form_end(formulaire)}}
+
+{% endblock %}
